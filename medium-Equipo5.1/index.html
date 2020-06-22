@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/90e469c395.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Clon de Medium</title>
+</head>
+
+<header class="pt-2 pl-2 pr-2">
+    <nav class="d-flex justify-content-between px-3">
+        <div>
+            <img id="small-logo" onclick="loadContent('index.html')" src="https://miro.medium.com/max/195/1*emiGsBgJu2KHWyjluhKXQw.png"
+                class="d-inline d-md-none ">
+            <img id="main-logo" onclick="loadContent('index.html')" src="https://miro.medium.com/max/1090/1*TGH72Nnw24QL3iV9IOm4VA.png"
+                class="d-none d-md-inline" style="width: 21%;" >
+        </div>
+        <div class="d-flex align-items-center">
+            <svg class="bi bi-search icon mr-3  text-muted" width="1em" height="1em" viewBox="0 0 16 16"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                    clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                    d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                    clip-rule="evenodd" />
+            </svg>
+            <svg class="icon mr-3 d-none d-md-inline bi bi-bookmarks text-muted" width="1em"
+                height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M7 13l5 3V4a2 2 0 00-2-2H4a2 2 0 00-2 2v12l5-3zm-4 1.234l4-2.4 4 2.4V4a1 1 0 00-1-1H4a1 1 0 00-1 1v10.234z"
+                    clip-rule="evenodd" />
+                <path d="M14 14l-1-.6V2a1 1 0 00-1-1H4.268A2 2 0 016 0h6a2 2 0 012 2v12z" />
+            </svg>
+            <svg class="bi bi-bell icon mr-3 text-muted" width="1em" height="1em" viewBox="0 0 16 16"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16a2 2 0 002-2H6a2 2 0 002 2z" />
+                <path fill-rule="evenodd"
+                    d="M8 1.918l-.797.161A4.002 4.002 0 004 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 00-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 111.99 0A5.002 5.002 0 0113 6c0 .88.32 4.2 1.22 6z"
+                    clip-rule="evenodd" />
+            </svg>
+           <button class="btn border border-dark btn-sm btn-lg" onclick="loadContent('form.html',handleSubmitClick)"  style="white-space: nowrap;" >New Post </button>
+            <img class="rounded-circle rounded-icon mx-3"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQll4T5OfofBM0UJLri9wKU0mAAgkFlaLyfFGXwP7RmxEKj24zz&usqp=CAU"
+                alt="">
+        </div>
+    </nav>
+    
+</header>
+<body>
+
+    <div id="card1Modal" class="modal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Complete post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 ">
+                    <div class="card border-white">
+                        <img src=https://cdn-images-1.medium.com/focal/832/302/59/31/1*QvCDWYODYBkOqHom6VxA7g.jpeg
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Twitter is testing a way to silence reply guys. It might work too
+                                well.</h5>
+                            <p class="card-text">Tras visitar más de 100 territorios desde mi elección como Presidente de la FIFA hace cuatro años, 
+                                creo que tenemos trabajo que hacer para que el fútbol sea verdaderamente global. 
+                                El documento de visionado disponible a continuación en su totalidad, es mi sugerencia de plan de acción. 
+                                Mi visión es que la organización ayude a desarrollar el fútbol en todas las regiones del mundo para que muchas más puedan competir al más alto nivel. 
+                                La meta es tener al menos 50 selecciones nacionales y clubes de todos los continentes compitiendo en plenitud contra las élites actuales del juego.</p>
+                            <p class="card-text mb-0"><small>Will Oremus in OneZero</small></p>
+                            <div class="row">
+                                <div class="col-10">
+                                    <p class="card-text"><small class="text-muted">May 1 · 4 min read ★</small></p>
+                                </div>
+                                <div class="col-2 d-flex justify-content-end px-0">
+                                    <div class="d-md-none">
+                                        <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
+                                    </div>
+                                    <a class="text-dark mx-1" href="#"><i
+                                            class="fas fa-ellipsis-h text-muted"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="card2Modal" class="modal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Complete post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <div class="d-none d-md-block">
+                        <div class="card border-white">
+                            <div class="h-100 w-100">
+                                <img src="https://cdn-images-1.medium.com/focal/1008/444/53/28/1*9qS3yM0_HipiqZ4nS0LIaQ.png"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                </div>
+                                <h5 class="card-title">This is How Much YouTube Paid Me For My 1,000,000...</h5>
+                                <p class="card-text">La amenaza de la COVID-19 es tan global y totalitaria que a veces pensamos que el mundo está en suspenso. 
+                                    Nuestra corta vista nos engaña. Los males estructurales de la sociedad en América Latina continúan o hasta se propagan más rápido. 
+                                    Marzo, el primer mes de emergencia sanitaria en México, fue el más violento del gobierno de Andrés Manuel López Obrador: 3029 muertos. 
+                                    La curva de contagios del virus se disparó en junio.
+                                     Y pese que el país estaba bajo medidas de aislamiento social, el 7 de este mes fue el día con más asesinatos en lo que va de año.</p>
+                                <p class="card-text mb-0"><small>Shelby Church in OneZero</small></p>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <p class="card-text"><small class="text-muted">May 1 · 4 min read ★</small>
+                                        </p>
+                                    </div>
+                                    <div class="col-2 d-flex justify-content-end px-0">
+                                        <div class="d-md-none">
+                                            <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
+                                        </div>
+                                        <a class="text-dark mx-1" href="#"><i
+                                                class="fas fa-ellipsis-h text-muted"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-6 d-flex justify-content-around">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+    <nav class="sticky-top d-flex flex-row justify-content-center align-items-center bg-white">
+        <div>
+            <i class="fas fa-chevron-left text-muted d-inline"></i>
+        </div>
+       
+        <div class="overflow-horizontal d-flex d-inline justify-content-center">
+           
+            <a class="nav-link text-muted nav-list" href="#">HOME</a>
+            <a class="nav-link text-muted nav-list" href="#">CORONAVIRUS BLOG</a>
+            <a class="nav-link text-muted nav-list" href="#">POPULAR</a>
+            <a class="nav-link text-muted nav-list" href="#">ONEZERO</a>
+            <a class="nav-link text-muted nav-list" href="#">ELEMENTAL</a>
+            <a class="nav-link text-muted nav-list" href="#">GEN</a>
+            <a class="nav-link text-muted nav-list" href="#">ZORA</a>
+            <a class="nav-link text-muted nav-list" href="#">FORGE</a>
+            <a class="nav-link text-muted nav-list" href="#">HUMAN PARTS</a>
+            <a class="nav-link text-muted nav-list" href="#">MARKER</a>
+            <a class="nav-link text-muted nav-list" href="#">LEVEL</a>
+            <a class="nav-link text-muted nav-list" href="#">HEATED</a>
+            <a class="nav-link text-muted nav-list" href="#">MORE</a>
+            
+            
+        </div>
+        <div>
+            <i class="fas fa-chevron-right text-muted d-inline"></i>
+        </div>
+    </nav>
+    <div id="main-container" class=" fluid-container pt-4 pl-4 pr-4">
+        
+                <div class="row">
+                    <!---Primer card / card de la izquierda-->
+                    <div class="col-12 col-md-5">
+                        <div class="card border-white">
+                            <img src=https://cdn-images-1.medium.com/focal/832/302/59/31/1*QvCDWYODYBkOqHom6VxA7g.jpeg
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 id="card1" class="card-title">Twitter is testing a way to silence reply guys. It might work too
+                                    well.</h5>
+                                <p class="card-text">This could make the platform less toxic - and less magical</p>
+                                <p class="card-text mb-0"><small>Will Oremus in OneZero</small></p>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <p class="card-text"><small class="text-muted">May 1 · 4 min read ★</small></p>
+                                    </div>
+                                    <div class="col-2 d-flex justify-content-end px-0">
+                                        <div class="d-md-none">
+                                            <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
+                                        </div>
+                                        <a class="text-dark mx-1" href="#"><i
+                                                class="fas fa-ellipsis-h text-muted"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---Primer card / card de la izquierda-->
+                    <!---3 cards / cards centrales-->
+                    <div id="new-wrapper" class="col-12 col-md-4">
+                      
+                    </div>
+                     <!---Fin 3 cards / cards centrales-->
+                     <!---3er card / card derecha-->
+                    <div class="col-12 col-md-3">
+                        <div class="d-none d-md-block">
+                            <div class="card border-white">
+                                <div class="h-100 w-100">
+                                    <img src="https://cdn-images-1.medium.com/focal/1008/444/53/28/1*9qS3yM0_HipiqZ4nS0LIaQ.png"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    </div>
+                                    <h5 id="card2" class="card-title">This is How Much YouTube Paid Me For My 1,000,000...</h5>
+                                    <p class="card-text">Here is the answer to the question that...</p>
+                                    <p class="card-text mb-0"><small>Shelby Church in OneZero</small></p>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <p class="card-text"><small class="text-muted">May 1 · 4 min read ★</small>
+                                            </p>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-end px-0">
+                                            <div class="d-md-none">
+                                                <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
+                                            </div>
+                                            <a class="text-dark mx-1" href="#"><i
+                                                    class="fas fa-ellipsis-h text-muted"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-around">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---Fin 3er card / card derecha-->
+                    <!---linea solo visual-->
+                    <div class=" container">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                                <p class="card-text mb-0" id="text-editors"><small>SEE EDITOR´S PICKS ></small></p>
+                            </div>
+                            <div class="col-12">
+                                <hr class="line">
+                            </div>
+                        </div>
+                    </div>
+                     <!---fin linea solo visual-->
+                      
+                    <div class="row u-flex ">
+                        <div class="col-12 col-md-7 d-flex flex-column mt-3">
+                            <!---texto visual-->
+                            <article class="border bg-light text-dark p-5">
+                                <h3>A new way to control your experience</h3>
+                                <p>Hide content from authors or publications on your Medium homepage and in emails by
+                                    clicking the more icon (…) and selecting mute.</p>
+                                <button class="btn btn-success">Learn more</button>
+                            </article>
+                            <!---fin texto visual-->
+
+                            <div class="container mt-5">
+                                <!---contenedor segunda seccion izquierda -->
+                                <article id="comun-wrapper"  class="row">
+
+                                    <div class="col-8 d-flex flex-column pl-5 pb-5">
+                                        <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
+                                        <h4 class="hoover-h">Ninety Thousand Dead and Counting</h4>
+                                        <p class="text-muted font-weight-light">"Trump’s Misdirecting Away the Greatest
+                                            Leadership Failure in the World. It’s Working."</p>
+                                        <div class="d-flex justify-content-start">
+                                            <p class="mx-2">in</p><span class="hoover-h"> Eudaimonia and Co</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 d-flex justify-content-around">
+                                                <span class="text-muted">May 19</span>
+                                                <span class="text-muted">•</span>
+                                                <span class="text-muted">9 min read</span>
+                                                <span class="text-muted">★</span>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <i class="far fa-bookmark mx-1 hoover-h"></i>
+                                                <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex flex-column mt-5 pr-0">
+                                        <img src="https://cdn-images-1.medium.com/fit/c/152/156/0*E7GRwta3ZYqXNOMB" class="card-img" alt="...">
+                                    </div>
+
+                                    
+
+                                </article>
+                            </div>
+                        </div>
+
+
+
+                        <!---Aqui empieza barra derecha-->
+                        <div class="col-12 col-md-5 mt-3 d-flex flex-column">
+                            <aside class="sticky-top" style="transform:translate3d(0px, 50px, 0px);">
+                                <h4 class="pt-2 pb-2">Popular on Medium</h4>
+                                <div id="popular-wrapper" class="col-12">
+                                
+                                </div>
+                            
+                          
+
+                                <div class="border-top">
+                                    <nav class="nav d-flex flex-row justify-content-left">
+                                        <a class="nav-link text-muted" href="#">Help</a>
+                                        <a class="nav-link text-muted" href="#">Status</a>
+                                        <a class="nav-link text-muted" href="#">Writers</a>
+                                        <a class="nav-link text-muted" href="#">Blog</a>
+                                        <a class="nav-link text-muted" href="#">Careers</a>
+                                        <a class="nav-link text-muted" href="#">Privacy</a>
+                                        <a class="nav-link text-muted" href="#">Terms</a>
+                                        <a class="nav-link text-muted" href="#">About</a>
+                                    </nav>
+                                </div>
+                            </aside>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+                </script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                crossorigin="anonymous"></script>
+            </script>
+            <script src="js/main.js"></script>
+        
+  
+
+</body>
+
+</html>
